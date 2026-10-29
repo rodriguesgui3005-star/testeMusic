@@ -1,0 +1,22 @@
+### cadastro
+POST http://localhost:8080/api/auth/cadastro
+Content-Type: application/json
+
+{"nome":"Gui","username":"guimtws","email":"gui@teste.com","senha":"12345678"}
+
+### login (pode usar e-mail ou username)
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{"login":"guimtws","senha":"12345678"}
+
+### rota protegida (cole o token do login)
+GET http://localhost:8080/api/usuarios/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJtdXNpY2FyZCIsInN1YiI6IjEiLCJleHAiOjE3OTMwMjY3MzEsImlhdCI6MTc5MzAxOTUzMSwidXNlcm5hbWUiOiJndWltdHdzIn0.B6M6sfEVjElurppk1rSi_OCQ2rya5Y1AGBxHk_62Iq4
+
+### avaliar álbum
+POST http://localhost:8080/api/avaliacoes
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJtdXNpY2FyZCIsInN1YiI6IjEiLCJleHAiOjE3OTMwMjY3MzEsImlhdCI6MTc5MzAxOTUzMSwidXNlcm5hbWUiOiJndWltdHdzIn0.B6M6sfEVjElurppk1rSi_OCQ2rya5Y1AGBxHk_62Iq4
+Content-Type: application/json
+
+{"tipo":"ALBUM","mbid":"b1392450-e666-3926-a536-22c65f834433","nota":5,"resenha":"Obra-prima."}
